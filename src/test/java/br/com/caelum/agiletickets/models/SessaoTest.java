@@ -7,7 +7,7 @@ public class SessaoTest {
 
 
 	@Test
-	public void deveVender1ingressoSeHa2vagas() throws Exception {
+	public void deveReservarIngressoSeHaVaga() throws Exception {
 		Sessao sessao = new Sessao();
         sessao.setTotalIngressos(2);
 
@@ -15,7 +15,7 @@ public class SessaoTest {
 	}
 
 	@Test
-	public void naoDeveVender3ingressoSeHa2vagas() throws Exception {
+	public void naoDeveVenderIngressoSeNaoHaVagas() throws Exception {
 		Sessao sessao = new Sessao();
 		sessao.setTotalIngressos(2);
 
@@ -23,7 +23,7 @@ public class SessaoTest {
 	}
 
 	@Test
-	public void reservarIngressosDeveDiminuirONumeroDeIngressosDisponiveis() throws Exception {
+	public void deveDiminuirQuantidadeIngressosDisponiveisAposReserva() throws Exception {
 		Sessao sessao = new Sessao();
 		sessao.setTotalIngressos(5);
 
