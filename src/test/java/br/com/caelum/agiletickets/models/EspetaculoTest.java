@@ -30,7 +30,7 @@ public class EspetaculoTest {
 	}
 
 	@Test
-	public void DeveInformarSeNaoEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoes() {
+	public void deveInformarSeNaoEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoes() {
 		Espetaculo ivete = new Espetaculo();
 
 		ivete.getSessoes().add(sessaoComIngressosSobrando(1));
@@ -41,7 +41,7 @@ public class EspetaculoTest {
 	}
 
 	@Test
-	public void DeveInformarSeEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
+	public void deveInformarSeEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
 		Espetaculo ivete = new Espetaculo();
 
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
@@ -52,7 +52,7 @@ public class EspetaculoTest {
 	}
 
 	@Test
-	public void DeveInformarSeEhPossivelReservarAQuantidadeExataDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
+	public void deveInformarSeEhPossivelReservarAQuantidadeExataDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
 		Espetaculo ivete = new Espetaculo();
 
 		ivete.getSessoes().add(sessaoComIngressosSobrando(3));
@@ -63,7 +63,7 @@ public class EspetaculoTest {
 	}
 
 	@Test
-	public void DeveInformarSeNaoEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
+	public void deveInformarSeNaoEhPossivelReservarAQuantidadeDeIngressosDentroDeQualquerDasSessoesComUmMinimoPorSessao() {
 		Espetaculo ivete = new Espetaculo();
 
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
