@@ -47,6 +47,13 @@ public class EspetaculosController {
 
 	@Post @Path("/espetaculos")
 	public void adiciona(Espetaculo espetaculo) {
+		validaCamposEspetaculo(espetaculo);
+
+		agenda.cadastra(espetaculo);
+		result.redirectTo(this).lista();
+	}
+
+	private void validaCamposEspetaculo(Espetaculo espetaculo) {
 		// aqui eh onde fazemos as varias validacoes
 		// se nao tiver nome, avisa o usuario
 		// se nao tiver descricao, avisa o usuario
@@ -57,9 +64,6 @@ public class EspetaculosController {
 			validator.add(new ValidationMessage("Descricao do espetaculo nao pode estar em branco", ""));
 		}
 		validator.onErrorRedirectTo(this).lista();
-
-		agenda.cadastra(espetaculo);
-		result.redirectTo(this).lista();
 	}
 
 
@@ -81,6 +85,16 @@ public class EspetaculosController {
 			return;
 		}
 
+		validaQuantidadeLugaresReserva(quantidade, sessao);
+
+		sessao.reserva(quantidade);
+		result.include("message", "Sessao reservada com sucesso");
+
+		result.redirectTo(IndexController.class).index();
+	}
+
+	private void validaQuantidadeLugaresReserva(final Integer quantidade,
+			Sessao sessao) {
 		if (quantidade < 1) {
 			validator.add(new ValidationMessage("Voce deve escolher um lugar ou mais", ""));
 		}
@@ -91,11 +105,6 @@ public class EspetaculosController {
 
 		// em caso de erro, redireciona para a lista de sessao
 		validator.onErrorRedirectTo(this).sessao(sessao.getId());
-
-		sessao.reserva(quantidade);
-		result.include("message", "Sessao reservada com sucesso");
-
-		result.redirectTo(IndexController.class).index();
 	}
 
 	@Get @Path("/espetaculo/{espetaculoId}/sessoes")
