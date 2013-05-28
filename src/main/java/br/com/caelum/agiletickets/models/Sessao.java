@@ -30,6 +30,14 @@ public class Sessao {
 
 	private Integer ingressosReservados = 0;
 
+	public Sessao(DateTime inicio) {
+		this.inicio = inicio;
+	}
+
+	public Sessao() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getId() {
 		return id;
 	}
