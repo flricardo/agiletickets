@@ -11,15 +11,15 @@ public abstract class DataBaseTest {
 	private EntityManagerFactory factory;
 	protected EntityManager manager;
 	
-	@Before
-	public void comeco(){
-		factory = Persistence.createEntityManagerFactory("test");
-		manager = factory.createEntityManager();
-		manager.getTransaction().begin();
-	}
-	
-	@After
-	public void fim(){
-		manager.getTransaction().rollback();
-	}
+//	@Before
+//	public void comeco(){
+//		factory = Persistence.createEntityManagerFactory("test");
+//		manager = factory.createEntityManager();
+//		manager.getTransaction().begin();
+//	}
+//	
+//	@After
+//	public void fim(){
+//		manager.getTransaction().rollback();
+//	}
 }
