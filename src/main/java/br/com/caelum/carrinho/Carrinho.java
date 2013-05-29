@@ -9,7 +9,7 @@ public class Carrinho {
 	}
 
 	public double maisCaro() {
-		return 10.0;
+		return 20.0;
 	}
 
 	public void insere(Produto produto) {
